@@ -1,0 +1,15 @@
+{
+  "name": "rtmpserver",
+  "version": "1.0.0",
+  "description": "Real Time Messaging Protocol Server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "rtmp"
+  ],
+  "dependencies": {
+    "node-media-server": "^2.1.9"
+  }
+}
