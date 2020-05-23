@@ -1,0 +1,16 @@
+{
+  "name": "json-server",
+  "version": "1.0.0",
+  "description": "JSON server for stream client React Redux CRUD App",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "json-server -p 3001 -w db.json"
+  },
+  "keywords": [
+    "json-server"
+  ],
+  "dependencies": {
+    "json-server": "^0.16.1"
+  }
+}
