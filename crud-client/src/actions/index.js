@@ -23,6 +23,7 @@ export const signOut = () => {
     }
 }
 
+// TODO: apply Owner Authorization to createStream
 export const createStream = formValues => async (dispatch, getState) => {
     const {userId} = getState().auth;
     const response = await streams.post('/streams', {...formValues, userId});
@@ -50,6 +51,7 @@ export const editStream = (streamId, formValues) => async (dispatch, getState) =
     plainRouterHistory.push('/')
 }
 
+// TODO: apply Owner Validation to deleteStream
 export const deleteStream = (streamId) => async dispatch => {
     await streams.delete(`/streams/${streamId}`);
     dispatch({type: DELETE_STREAM, payload: streamId});
