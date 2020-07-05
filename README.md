@@ -1,8 +1,9 @@
-# Video Stream
-###### React Redux CRUD App
+# Video Streams
+##### React Redux CRUD App
 
-[DEMO](https://crud-pi.now.sh)
+[DEMO Client](https://video-streams.now.sh)
 
+[DEMO JSON Server](https://stream-json-server.herokuapp.com/streams)
 
 --------------------------
 ## App Structure
@@ -16,11 +17,6 @@
 --------
 
 ## Node.js & npm install
-
-```
-npm install npm -g
-npm update
-```
 
 [How To Install Node.js on Ubuntu 20.04](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04)
 
@@ -43,9 +39,37 @@ v14.3.0
 ```
 
 
-### Stream client
+------------------------------
 
-###### Client run
+
+# Auth:
+
+1) [new Google APIs project](https://console.developers.google.com/projectcreate)
+
+2) [setup OAuth client](https://console.developers.google.com/apis/credentials/oauthclient)
+
+3) import Google API library (public/index.html): <script src="https://apis.google.com/js/api.js" ></script>
+
+4) initialize Google API library (components/GoogleAuth.js):
+
+```
+    componentDidMount() {
+        window.gapi.load('client:auth2', () => {
+                window.gapi.client.init({
+                        clientId: '***********-*****************************.apps.googleusercontent.com',
+                        scope: 'email'
+                    }
+                )
+            }
+        )
+    }
+ ```
+--------
+
+
+# 1. Stream client
+
+Client run
 ```
 cd crud-client
 npm install
@@ -56,9 +80,9 @@ npm start
 
 ---------
 
-### JSON server for stream-client REST-Based React Apps
+# 2. JSON server for stream-client REST-Based React Apps
 
-###### JSON Server run
+JSON Server run
 ```
 cd json-server
 npm install
@@ -72,9 +96,9 @@ npm start
 
 ---------
 
-### NODE MEDIA SERVER 
+# 3. NODE MEDIA SERVER 
 
-###### RTMP Server run
+RTMP Server run
 ```
 cd rtmp-server
 npm install
@@ -83,22 +107,23 @@ npm start
 
 [http://localhost:8000](http://localhost:8000)
 
-
-
 ---------
 
-### OBS Studio
+
+# 4. OBS Studio
 
 [Open Broadcaster Software](https://obsproject.com/)
 
-###### OBS Studio install and run
+
+OBS Studio install and run
 ```
 sudo snap install obs-studio
 
 obs-studio
 ```
 
-###### Customize OBS Stream
+
+Customize OBS Stream
 
 ```
 SETTINGS => Stream
